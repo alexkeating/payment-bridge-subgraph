@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: PaymentBridgeFactory
+    network: kovan
+    source:
+      address: "0x45331a718d0Ea0fEd8196c4fe84CA69E59De4fD1"
+      abi: PaymentBridgeFactory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - NewPaymentBridge
+      abis:
+        - name: PaymentBridgeFactory
+          file: ./abis/PaymentBridgeFactory.json
+      eventHandlers:
+        - event: NewPaymentBridge(indexed address,indexed address)
+          handler: handleNewPaymentBridge
+      file: ./src/mapping.ts
