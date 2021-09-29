@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -21,3 +21,23 @@ dataSources:
         - event: NewPaymentBridge(indexed address,indexed address)
           handler: handleNewPaymentBridge
       file: ./src/mapping.ts
+templates:
+  - kind: ethereum/contract
+    name: PaymentBridgetemplate
+    network: kovan
+    source:
+      abi: PaymentBridge
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/payment-bridge-mapping.ts
+      entities:
+        - Payment
+      abis:
+        - name: PaymentBridge
+          file: ./abis/PaymentBridge.json
+      eventHandlers:
+        - event: >-
+            Payment(indexed address, indexed address, indexed address. uint256)
+          handler: handlePayment
