@@ -23,7 +23,7 @@ dataSources:
       file: ./src/mapping.ts
 templates:
   - kind: ethereum/contract
-    name: PaymentBridgetemplate
+    name: PaymentBridgeTemplate
     network: kovan
     source:
       abi: PaymentBridge
@@ -39,5 +39,5 @@ templates:
           file: ./abis/PaymentBridge.json
       eventHandlers:
         - event: >-
-            Payment(indexed address, indexed address, indexed address. uint256)
+            Payment(indexed address,indexed address,indexed address,uint256)
           handler: handlePayment

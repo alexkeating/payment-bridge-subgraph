@@ -1,9 +1,7 @@
 type Bridge @entity {
   id: ID!
-  count: BigInt!
   bridgeOwner: Bytes! # address
   bridge: Bytes! # address
-  payment: [Payment!] @derivedFrom(field: bridge)
 }
 
 type Payment @entity {
@@ -11,5 +9,4 @@ type Payment @entity {
   tokenAddress: Bytes!
   payee: Bytes!
   recipient: Bytes!
-  bridge: Bytes!
 }
