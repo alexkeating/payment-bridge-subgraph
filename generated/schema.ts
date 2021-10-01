@@ -72,7 +72,7 @@ export class Payment extends Entity {
     this.set("id", Value.fromString(id));
 
     this.set("tokenAddress", Value.fromBytes(Bytes.empty()));
-    this.set("payee", Value.fromBytes(Bytes.empty()));
+    this.set("payer", Value.fromBytes(Bytes.empty()));
     this.set("recipient", Value.fromBytes(Bytes.empty()));
   }
 
@@ -111,13 +111,13 @@ export class Payment extends Entity {
     this.set("tokenAddress", Value.fromBytes(value));
   }
 
-  get payee(): Bytes {
-    let value = this.get("payee");
+  get payer(): Bytes {
+    let value = this.get("payer");
     return value!.toBytes();
   }
 
-  set payee(value: Bytes) {
-    this.set("payee", Value.fromBytes(value));
+  set payer(value: Bytes) {
+    this.set("payer", Value.fromBytes(value));
   }
 
   get recipient(): Bytes {

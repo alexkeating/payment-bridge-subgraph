@@ -7,6 +7,6 @@ type Bridge @entity {
 type Payment @entity {
   id: ID!
   tokenAddress: Bytes!
-  payee: Bytes!
+  payer: Bytes!
   recipient: Bytes!
 }

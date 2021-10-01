@@ -4,9 +4,9 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ Plaza/TokenBridge",
-    "create-local": "graph create --node http://localhost:8020/ Plaza/TokenBridge",
-    "remove-local": "graph remove --node http://localhost:8020/ Plaza/TokenBridge",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ alexkeating/tokenbridge",
+    "create-local": "graph create --node http://localhost:8020/ alexkeating/tokenbridge",
+    "remove-local": "graph remove --node http://localhost:8020/ alexkeating/Tokenbridge",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 Plaza/TokenBridge"
   },
   "dependencies": {
